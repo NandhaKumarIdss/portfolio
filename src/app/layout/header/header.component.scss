@@ -1,0 +1,46 @@
+.navbar {
+    height: 4.4rem;
+}
+
+.nav-link.active {
+    color: #ffbd39;
+    // font-weight: bold;
+}
+
+.nav-link {
+    // font-weight: 500;
+    color: #fff;
+    position: relative;
+    padding: 0.5rem 1rem;
+
+    // &:hover,
+    // &.active {
+    //     color: #000;
+    // }
+
+    @media (min-width: 991px) {
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #ffbd39;
+            visibility: hidden;
+            transition: 0.3s ease-in-out;
+        }
+
+        &:hover::before,
+        &.active::before {
+            width: 100%;
+            visibility: visible;
+        }
+    }
+}
+
+.shadow-header {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+}

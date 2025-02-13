@@ -1,0 +1,130 @@
+<div class="title-container pt-sm-5 mx-md-5 mx-sm-0">
+    <div class="title-wrapper" data-aos="zoom-in-up">
+        <h1 class="title-title">Contact</h1>
+        <span class="title-bg-text">Contact</span>
+    </div>
+
+    <div class="desc" data-aos="zoom-in-up">
+        <strong>Let's Connect & Build Something Amazing!</strong>
+        <p>Have a project in mind or just want to say hello? Feel free to reach out!
+            Whether it's collaboration, freelancing, or tech discussions,
+            I'm always open to new opportunities. Let's bring your ideas to life!
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <div class="row">
+                    <div class="col-md-5 col-lg-5 col-12">
+                        <div class="card contact-card" data-aos="fade-right">
+                            <div class="card-body">
+                                <div class="d-flex contact-icon-div">
+                                    <div>
+                                        <fa-icon [icon]="faMapMarkerAlt" class="contact-icon"></fa-icon>
+                                    </div>
+                                    <div class="mx-4">
+                                        <h5 class="card-title"> Address</h5>
+                                        <p>Coimbatore, Tamil Nadu, India</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex contact-icon-div">
+                                    <div>
+                                        <fa-icon [icon]="faPhone" class="contact-icon"></fa-icon>
+                                    </div>
+                                    <div class="mx-4">
+                                        <h5 class="card-title"> Call Me</h5>
+                                        <p>+91 6380241619</p>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex contact-icon-div">
+                                    <div>
+                                        <fa-icon [icon]="faEnvelope" class="contact-icon"></fa-icon>
+                                    </div>
+                                    <div class="mx-4">
+                                        <h5 class="card-title"> Email</h5>
+                                        <p>nandha.kgisl&#64;gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="map-container">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.619758271962!2d77.02377401484157!3d11.016844893171004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85c01b0e3973f%3A0x492f9be72ba3e8a0!2sCoimbatore%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000"
+                                        width="100%" height="200" style="border:0;" allowfullscreen>
+                                    </iframe>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-7 col-12 mt-3 mt-lg-0 mt-md-0">
+                        <div class="card contact-card" data-aos="fade-left">
+                            <div class="card-body">
+                                <h5 class="contact-header">Send a Message</h5>
+                                <form id="contact-form" (ngSubmit)="sendEmail()" #contactForm="ngForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <input type="text" name="name" [(ngModel)]="contactForm.value.name"
+                                                class="form-control" placeholder="Your Name" required #name="ngModel">
+                                            @if(name.invalid && name.touched) {
+                                            <span class="text-danger">
+                                                Name is required.
+                                            </span>
+                                            }
+                                        </div>
+
+                                        <div class="col-md-6 mb-3">
+                                            <input type="email" name="email" [(ngModel)]="contactForm.value.email"
+                                                class="form-control" placeholder="Your Email" required email
+                                                #email="ngModel">
+                                            @if(email.invalid && email.touched) {
+                                            <span class="text-danger">
+                                                Please enter a valid email address.
+                                            </span>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <input type="text" name="subject" [(ngModel)]="contactForm.value.subject"
+                                            class="form-control" placeholder="Subject" required #subject="ngModel">
+                                        @if(subject.invalid && subject.touched) {
+                                        <span class="text-danger">
+                                            Subject is required.
+                                        </span>
+                                        }
+                                    </div>
+
+                                    <div>
+                                        <textarea name="message" [(ngModel)]="contactForm.value.message"
+                                            class="form-control" rows="7" placeholder="Message" required
+                                            #message="ngModel" [appMinWords]="50"></textarea>
+                                        @if(message.invalid && message.touched) {
+                                        @if(message.errors?.['required']) {
+                                        <span class="text-danger">
+                                            Message is required.
+                                        </span>
+                                        }
+                                        @if(message.errors?.['minWords']) {
+                                        <span class="text-danger">
+                                            Message must be at least 50 words. You have {{
+                                            message.errors?.['minWords'].actualLength }} words.
+                                        </span>
+                                        }
+                                        }
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-send" [disabled]="!contactForm.form.valid">
+                                            Send Message
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

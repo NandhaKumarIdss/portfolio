@@ -1,0 +1,26 @@
+<div class="title-container pt-sm-5">
+    <div class="title-wrapper" data-aos="zoom-in-up">
+        <h1 class="title-title">My Works</h1>
+        <span class="title-bg-text">My Works</span>
+    </div>
+
+    <div class="desc mx-5 mt-3" data-aos="zoom-in-up">
+        <strong>Showcasing My Full-Stack Expertise.</strong>
+        <p>These are some of my works showcasing my expertise in full-stack development, including business management
+            systems and e-commerce platforms. Each project highlights my ability to build scalable, efficient, and
+            user-friendly applications.
+        </p>
+    </div>
+
+    <div class="card-deck mt-4" #lightGalleryContainer>
+        @for(image of images; track image.title) {
+        <a [href]="image.fullSize" class="card" data-aos="flip-right">
+            <img [src]="image.thumbnail" class="card-img-top" alt="Project Screenshot" />
+            <div class="card-body">
+                <h5 class="card-title">{{ image.title }}</h5>
+                <p class="card-text">{{ image.description }}</p>
+            </div>
+        </a>
+        }
+    </div>
+</div>

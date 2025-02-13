@@ -1,0 +1,21 @@
+<div #navContent class="card nav-content-container custom-scroll bg-dark border-body" data-bs-theme="dark" appScrollSpy
+    (activeSectionChange)="onActiveSectionChange($event)">
+    <div class="section-container container-fluid pt-2 pb-2">
+        <div id="section1" class="section mx-0 mx-md-5">
+            <app-home (triggerScrollSpy)="scrollToSection($event)"></app-home>
+        </div>
+        <div id="section2" class="section mx-0 mx-md-5">
+            <app-services-providing></app-services-providing>
+        </div>
+        <div id="section3" class="section mx-0 mx-md-5">
+            <app-experiences></app-experiences>
+        </div>
+        <div id="section4" class="section mx-0 mx-md-5 mb-md-5">
+            <app-our-works></app-our-works>
+        </div>
+        <div id="section5" class="section mx-0 mx-md-5">
+            <app-contact></app-contact>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

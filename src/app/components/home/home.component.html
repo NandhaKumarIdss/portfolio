@@ -1,0 +1,25 @@
+<div class="container d-flex flex-column flex-md-row justify-content-around align-items-center position-relative pt-sm-5 pt-md-0"
+    style="min-height: 665px;">
+    <div class="bg-image d-md-none"></div>
+    <div class="position-relative z-2 greeting-content" data-aos="fade-right">
+        <h6 class="mb-0 greeting-content-hello">Hello! <span>It's me </span></h6>
+        <h2 class="mb-0 fw-bold greeting-content-naming">{{name}}</h2>
+        <span class="greeting-content-position">I'm a
+            <span class="typing-text" appTypingEffect [typingTexts]="jobTitles" [typingSpeed]="100" [deletingSpeed]="60"
+                [delayBetweenWords]="1000"></span>
+        </span>
+        <div>
+            <p class="mt-4 responsive-text">
+                Full Stack Developer with five+ years of experience in C#, .NET Core, Web API, Angular, React,
+                and SQL, specializing in developing business software and web applications.
+            </p>
+            <div class="button-group">
+                <button class="btn btn-hire" (click)="onScrollTo('section5')">Contact Me</button>
+                <button class="btn btn-work" (click)="onScrollTo('section4')">See my works</button>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-md-block" style="width: 700px;" data-aos="fade-left">
+        <img src="/images/nandhu.png" width="500" height="600">
+    </div>
+</div>

@@ -1,0 +1,126 @@
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: black;
+    border: 2px solid #ffbd39;
+    color: white;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(255, 189, 57, 0.3);
+
+    .card-title {
+        color: #ffbd39;
+    }
+
+    .contact-header {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffbd39;
+        margin-bottom: 10px;
+    }
+
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        fa-icon {
+            color: #ffbd39;
+            font-size: 1.2rem;
+        }
+    }
+
+    .map-container {
+        margin-top: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .form-control {
+            background: black;
+            border: 1px solid #ffbd39;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+
+            &::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        .btn-send {
+            background-color: #ffbd39;
+            color: #000;
+            border: none;
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                background-color: #ff9d00;
+                transform: scale(1.1);
+            }
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+
+        }
+    }
+}
+
+.contact-icon-div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    transition: background 0.3s ease-in-out;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    background: #ffefd5;
+    color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon-div:hover .contact-icon {
+    background-color: #ffbd39;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,161 @@
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/images/nandhu.png') no-repeat center center/cover;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.greeting-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  z-index: 2;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.responsive-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
+}
+
+
+@media (max-width: 992px) {
+  .greeting-content {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .responsive-text {
+    font-size: 14px;
+  }
+}
+
+.greeting-content-hello {
+  color: #ffbd39;
+  line-height: 2;
+  font-size: 20px;
+
+  span {
+    color: #fff;
+  }
+}
+
+.greeting-content-naming {
+  color: #ffbd39;
+  line-height: 1.5;
+  font-size: 32px;
+}
+
+.greeting-content-position {
+  font-size: 20px;
+}
+
+.typing-text {
+  font-weight: bold;
+  color: #ffbd39;
+  border-right: 2px solid #ffbd39;
+  padding-right: 5px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.d-none.d-md-block {
+  width: 700px;
+  height: 650px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-hire {
+  background-color: #ffbd39;
+  color: #000;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hire:hover {
+  background-color: #ff9d00;
+  transform: scale(1.1);
+}
+
+.btn-hire::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 189, 57, 0.2);
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.btn-hire:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-work {
+  background-color: transparent;
+  color: #ffbd39;
+  border: 2px solid #ffbd39;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-work:hover {
+  background-color: #ffbd39;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.btn-work::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 189, 57, 0.2);
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.btn-work:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 992px) {
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+}

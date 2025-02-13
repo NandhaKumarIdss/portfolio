@@ -1,0 +1,100 @@
+.experience-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 30px;
+
+    @media (min-width: 2077px) {
+        width: 65%;
+    }
+}
+
+.stepper-column {
+    .stepper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            position: relative;
+
+            .step-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #ffbd39;
+                color: black;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 15px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .step-box {
+                background: rgba(255, 255, 255, 0.1);
+                padding: 15px;
+                border-radius: 8px;
+                max-width: 500px;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                border-left: 3px solid #ffbd39;
+
+                .step-header {
+                    font-size: 1.25rem;
+                    font-weight: bold;
+                    color: #ffbd39;
+                    margin-bottom: 5px;
+                }
+
+                .date-range {
+                    font-size: 1rem;
+                    color: #ffbd39;
+                    margin-bottom: 10px;
+                    font-weight: bold;
+                }
+
+                p {
+                    font-size: 1rem;
+                    color: white;
+                    margin: 0;
+                }
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 18px;
+                top: 40px;
+                width: 3px;
+                height: 100%;
+                background-color: #ffbd39;
+                z-index: 0;
+            }
+
+            &:last-child::after {
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    .experience-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stepper-column {
+        width: 100%;
+    }
+}
