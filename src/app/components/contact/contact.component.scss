@@ -29,6 +29,9 @@
 
 
     p {
+        word-break: break-word; 
+        overflow-wrap: break-word;
+        max-width: 100%;
         font-size: 1rem;
         margin-bottom: 10px;
         display: flex;
