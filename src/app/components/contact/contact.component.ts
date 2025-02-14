@@ -5,16 +5,19 @@ import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg
 import { FormsModule } from '@angular/forms';
 import emailjs from 'emailjs-com';
 import { MinWordsDirective } from '../../../shared/directives/min-words.directive';
+import { SuccessModalComponent } from '../../../shared/modal/success-modal/success-modal.component';
+import { SuccessModalService } from '../../../shared/service/success-modal.service';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule, FormsModule, MinWordsDirective],
+  imports: [CommonModule, FontAwesomeModule, FormsModule, MinWordsDirective, SuccessModalComponent],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   private library: FaIconLibrary = inject(FaIconLibrary);
+  private successModalService: SuccessModalService = inject(SuccessModalService);
   faMapMarkerAlt = faMapMarkerAlt;
   faPhone = faPhone;
   faEnvelope = faEnvelope;
@@ -38,10 +41,10 @@ export class ContactComponent {
     emailjs.sendForm(serviceID, templateID, '#contact-form', userID)
       .then((response) => {
         console.log('Success!', response.status, response.text);
-        alert('Your message has been sent successfully!');
+        this.successModalService.showModal("Message has been sent. We'll get back to you.", "success");
       }, (err) => {
         console.error('Failed...', err);
-        alert('Failed to send the message. Please try again later.');
+        this.successModalService.showModal("Failed to send the message. Please try again later.", "error");
       });
   }
 

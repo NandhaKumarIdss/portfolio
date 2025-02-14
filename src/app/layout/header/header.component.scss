@@ -1,5 +1,13 @@
 .navbar {
     height: 4.4rem;
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        margin-right: auto;
+    }
 }
 
 .nav-link.active {
