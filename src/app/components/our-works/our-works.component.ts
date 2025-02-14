@@ -1,16 +1,16 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import lightGallery from 'lightgallery';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-zoom.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import { CommonModule } from '@angular/common';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
-  selector: 'app-our-works',
-  standalone: true,
-  imports: [CommonModule],
-  styleUrl: './our-works.component.scss',
-  templateUrl: './our-works.component.html'
+    selector: 'app-our-works',
+    standalone: true,
+    imports: [CommonModule],
+    styleUrl: './our-works.component.scss',
+    templateUrl: './our-works.component.html'
 })
 export class OurWorksComponent implements AfterViewInit {
   @ViewChild('lightGalleryContainer', { static: false }) lightGalleryContainer!: ElementRef;

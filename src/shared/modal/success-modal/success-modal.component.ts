@@ -2,11 +2,11 @@ import { Component, OnInit, inject } from '@angular/core';
 import { SuccessModalService } from '../../service/success-modal.service';
 
 @Component({
-  selector: 'app-success-modal',
-  standalone: true,
-  imports: [],
-  templateUrl: './success-modal.component.html',
-  styleUrl: './success-modal.component.scss'
+    selector: 'app-success-modal',
+    standalone: true,
+    imports: [],
+    templateUrl: './success-modal.component.html',
+    styleUrl: './success-modal.component.scss'
 })
 export class SuccessModalComponent implements OnInit {
   private successModalService: SuccessModalService = inject(SuccessModalService);

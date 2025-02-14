@@ -10,19 +10,19 @@ import { OurWorksComponent } from '../../components/our-works/our-works.componen
 import AOS from 'aos';
 
 @Component({
-  selector: 'app-landing-page',
-  standalone: true,
-  imports: [
-    HomeComponent,
-    ContactComponent,
-    ScrollSpyDirective,
-    FooterComponent,
-    ServicesProvidingComponent,
-    ExperiencesComponent,
-    OurWorksComponent
-  ],
-  templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+    selector: 'app-landing-page',
+    standalone: true,
+    imports: [
+        HomeComponent,
+        ContactComponent,
+        ScrollSpyDirective,
+        FooterComponent,
+        ServicesProvidingComponent,
+        ExperiencesComponent,
+        OurWorksComponent
+    ],
+    templateUrl: './landing-page.component.html',
+    styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent implements AfterViewInit {
   @ViewChild('navContent') navContent!: ElementRef;

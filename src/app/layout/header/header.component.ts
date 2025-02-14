@@ -1,12 +1,12 @@
-import { Component,inject, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ScrollSpyService } from '../../../shared/service/scroll-spy.service';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    standalone: true,
+    imports: [],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent implements OnInit {
   private scrollSpyService: ScrollSpyService = inject(ScrollSpyService);
