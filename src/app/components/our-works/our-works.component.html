@@ -12,9 +12,9 @@
         </p>
     </div>
 
-    <div class="card-deck mt-4" #lightGalleryContainer>
+    <div class="card-deck mt-4">
         @for(image of images; track image.title) {
-        <a [href]="image.fullSize" class="card" data-aos="flip-right">
+        <a [href]="image.fullSize" data-fancybox="gallery" class="card" data-aos="flip-right">
             <img [src]="image.thumbnail" class="card-img-top" alt="Project Screenshot" />
             <div class="card-body">
                 <h5 class="card-title">{{ image.title }}</h5>

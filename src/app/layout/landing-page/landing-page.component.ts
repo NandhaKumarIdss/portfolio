@@ -7,7 +7,6 @@ import { ScrollSpyService } from '../../../shared/service/scroll-spy.service';
 import { ServicesProvidingComponent } from '../../components/services-providing/services-providing.component';
 import { ExperiencesComponent } from '../../components/experiences/experiences.component';
 import { OurWorksComponent } from '../../components/our-works/our-works.component';
-import AOS from 'aos';
 
 @Component({
     selector: 'app-landing-page',
@@ -62,9 +61,6 @@ export class LandingPageComponent implements AfterViewInit {
         header.classList.remove('shadow-header');
       }
     }
-
-    AOS.init({ duration: 3000 });
-    AOS.refresh();
   }
 
   scrollToSection(sectionId: string): void {

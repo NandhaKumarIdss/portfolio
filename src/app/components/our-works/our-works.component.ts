@@ -1,9 +1,8 @@
-import lightGallery from 'lightgallery';
-import 'lightgallery/css/lightgallery.css';
-import 'lightgallery/css/lg-zoom.css';
-import 'lightgallery/css/lg-thumbnail.css';
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, inject, OnDestroy } from '@angular/core';
+import { Fancybox } from '@fancyapps/ui';
+
+
 
 @Component({
     selector: 'app-our-works',
@@ -12,8 +11,9 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
     styleUrl: './our-works.component.scss',
     templateUrl: './our-works.component.html'
 })
-export class OurWorksComponent implements AfterViewInit {
+export class OurWorksComponent implements AfterViewInit, OnDestroy {
   @ViewChild('lightGalleryContainer', { static: false }) lightGalleryContainer!: ElementRef;
+  private elRef: ElementRef = inject(ElementRef);
 
   images = [
     {
@@ -43,10 +43,16 @@ export class OurWorksComponent implements AfterViewInit {
   ];
 
   ngAfterViewInit() {
-    lightGallery(this.lightGalleryContainer.nativeElement, {
-      selector: 'a',
-      mode: 'lg-fade',
-      download: true,
+    Fancybox.bind(this.elRef.nativeElement, '[data-fancybox]', {
+      closeButton: 'auto', 
+      caption: function (fancybox, slide) {
+        return slide.caption ? `<span>${slide.caption}</span>` : ''; 
+      },
     });
+  }
+
+  ngOnDestroy() {
+    Fancybox.unbind(this.elRef.nativeElement);
+    Fancybox.close();
   }
 }

@@ -26,6 +26,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              "src/_redirects",
               {
                 "glob": "**/*",
                 "input": "public"
@@ -35,15 +36,13 @@
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/aos/dist/aos.css",
-              "node_modules/lightgallery/css/lightgallery.css",
-              "node_modules/lightgallery/css/lg-zoom.css",
-              "node_modules/lightgallery/css/lg-thumbnail.css"
+              "node_modules/@fancyapps/ui/dist/fancybox/fancybox.css"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper-base.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/aos/dist/aos.js",
-              "node_modules/lightgallery/lightgallery.min.js"
+              "node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js"
             ]
           },
           "configurations": {
@@ -52,7 +51,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",

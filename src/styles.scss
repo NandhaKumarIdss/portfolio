@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
     font-family: 'Poppins';
-    src: url('/assets/fonts/Poppins-Bold.ttf') format('ttf'),
-        url('/assets/fonts/Poppins-Regular.ttf') format('ttf'),
-        url('/assets/fonts/Poppins-Medium.ttf') format('ttf');
+    src: url('../public/fonts/Poppins-Bold.ttf') format('truetype'),
+        url('../public/fonts/Poppins-Medium.ttf') format('truetype'),
+        url('../public/fonts/Poppins-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -63,3 +63,4 @@
         color: #ffbd39;
     }
 }
+

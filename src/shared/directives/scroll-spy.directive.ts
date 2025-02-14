@@ -16,7 +16,7 @@ export class ScrollSpyDirective implements AfterViewInit {
 
       this.container.addEventListener('scroll', () => this.onScroll());
 
-      AOS.init();
+      AOS.init({ duration: 3000 });
     }, 0);
   }
 

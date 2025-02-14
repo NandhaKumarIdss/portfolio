@@ -4,8 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
-import { LightgalleryModule } from 'lightgallery/angular';
-import AOS from 'aos';
+// import AOS from 'aos';
 
 
 export class AppModule { }
@@ -16,18 +15,17 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(
       BrowserAnimationsModule,
       BrowserModule,
-      LightgalleryModule
     ),
     provideAnimationsAsync(),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: () => () => {
-        AOS.init({ duration: 3000 });
-        window.addEventListener('scroll', () => {
-          AOS.refresh();
-        });
-      },
-      multi: true
-    }
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: () => () => {
+    //     AOS.init({ duration: 3000 });
+    //     window.addEventListener('scroll', () => {
+    //       AOS.refresh();
+    //     });
+    //   },
+    //   multi: true
+    // }
   ]
 };

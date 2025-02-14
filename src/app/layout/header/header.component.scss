@@ -10,21 +10,14 @@
     }
 }
 
-.nav-link.active {
-    color: #ffbd39;
-    // font-weight: bold;
-}
-
 .nav-link {
-    // font-weight: 500;
     color: #fff;
     position: relative;
     padding: 0.5rem 1rem;
 
-    // &:hover,
-    // &.active {
-    //     color: #000;
-    // }
+    &.active {
+        color: #ffbd39;
+    }
 
     @media (min-width: 991px) {
         &::before {
@@ -37,13 +30,14 @@
             height: 2px;
             background-color: #ffbd39;
             visibility: hidden;
-            transition: 0.3s ease-in-out;
+            transition: width 0.3s ease-in-out, visibility 0s 0.3s;
         }
 
         &:hover::before,
         &.active::before {
             width: 100%;
             visibility: visible;
+            transition: width 0.3s ease-in-out, visibility 0s;
         }
     }
 }
